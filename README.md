@@ -10,3 +10,5 @@ Maybe it's not a bug, but incorrect usage from our side. We ran into similar pro
 wasm-ld --entry main lib.wasm main.wasm -o linked.wasm
 wasm-ld: error: entry symbol not defined (pass --no-entry to supress): main
 ```
+
+Update: It works
