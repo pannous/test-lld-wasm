@@ -1,5 +1,5 @@
-int foo();
+int test();
 int main()
 {
-	return foo();
+	return test();
 }

@@ -1,4 +1,6 @@
-wat2wasm --relocatable module.wat
+wat2wasm --relocatable lib.wat
 wat2wasm --relocatable main.wat
-wasm-ld  --verbose --trace --shared --relocatable --merge-data-segments -E module.wasm main.wasm -o linked.wasm
+wasm-ld  --verbose --trace -E --entry main lib.wasm main.wasm -o linked.wasm
 hexdump -C linked.wasm
+echo expect '42' as result:
+wasmer -i main linked.wasm
