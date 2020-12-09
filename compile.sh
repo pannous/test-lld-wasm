@@ -1,5 +1,5 @@
 export PATH=/opt/wasi-sdk/bin/:$PATH
-clang -Qn --target=wasm32 -nostdlib -Wl,--relocatable -o lib.wasm lib.c
+clang -Qn --target=wasm32 -nostdlib -Wl,--relocatable,--export-all -o lib.wasm lib.c
 clang -Qn --target=wasm32 -nostdlib -Wl,--relocatable -o main.wasm main.c
 
 wasm-ld --entry main lib.wasm main.wasm -o linked.wasm
